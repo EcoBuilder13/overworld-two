@@ -22,7 +22,7 @@ public class MixinDimensionType {
 	 * @author SuperCoder79
 	 */
 	@Overwrite
-	private static ChunkGenerator createNetherGenerator(Registry<Biome> biomes, Registry<ChunkGeneratorSettings> chunkgens, long seed) {
+	public static ChunkGenerator createNetherGenerator(Registry<Biome> biomes, Registry<ChunkGeneratorSettings> chunkgens, long seed) {
 		if (OverworldTwoConfig.get().generateNether) {
 			return new OverworldTwoChunkGenerator(MultiNoiseBiomeSource.Preset.NETHER.getBiomeSource(biomes, seed), seed, OverworldTwoChunkGenerator.NETHER);
 		}
